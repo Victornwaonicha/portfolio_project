@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Justice Guard - View Reports</title>
+    <style>
+        /* Custom styles for the reports page */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: green;
+            font-weight: bold;
+	}
+	
+	h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    margin-top: 20px;
+    margin-bottom: 30px;
+       }
+
+	.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ff6655;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Reports</h1>
+    <header>
+        <a href="{{ url_for('home') }}" class="btn">Home</a>
+    </header>
+
+    <table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Date Reported</th>
+            <th>User</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for report in reports %}
+            <tr>
+                <td>{{ report.title }}</td>
+                <td>{{ report.description }}</td>
+                <td>{{ report.location }}</td>
+                <td>{{ report.date_reported }}</td>
+                <td>{{ report.user.username }}</td>
+                <td>
+                    <form action="{{ url_for('delete_report', report_id=report.id) }}" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+

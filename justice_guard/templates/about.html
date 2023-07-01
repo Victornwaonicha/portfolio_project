@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About - JusticeGuard</title>
+  <style>
+    body {
+      background-image: url('/static/FB.png');
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: lightgoldenrodyellow;
+      padding: ;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      width: 150px;
+      height: 80px;
+      background: url("/static/2B2AEpO.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    footer {
+      background-color: burlywood;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"></div>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
+        <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+        <li><a href="{{ url_for('view_reports') }}" class="nav-link">Report</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="content">
+    <h1>About JusticeGuard</h1>
+    <p>JusticeGuard is a powerful incident reporting app designed to enhance safety and security in various environments. Our mission is to provide individuals and organizations with a reliable tool to efficiently report, manage, and analyze incidents, ensuring a proactive approach to maintaining a secure environment.</p>
+    <p>With JusticeGuard, you can easily document and track incidents, receive real-time notifications and alerts, and generate comprehensive reports for analysis and decision-making. Our user-friendly interface and customizable workflows make it simple for users of all technical backgrounds to navigate the platform and contribute to a safer community.</p>
+    <p>Whether you are an educational institution, corporate entity, or community organization, JusticeGuard empowers you to create a culture of safety and respond effectively to incidents. Join us in making a difference with JusticeGuard.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 JusticeGuard. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JusticeGuard - Incident Reporting App</title>
+  <script>
+    new Vue({
+      el: '#app',
+    });
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: bisque;
+      padding: ;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      width: 150px;
+      height: 80px;
+      background: url("/static/2B2AEpO.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #777;
+      font-weight: bold;
+    }
+
+    .hero {
+      background-image: url('/static/hero-imagee.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #ff6655;
+      text-align: center;
+      padding: 100px 0;
+      height: 68vh; /* Added */
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .features {
+      background-color: whitesmoke;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .features ul {
+      list-style: armenian;
+      padding: 0;
+      margin: 0;
+    }
+
+    .features li {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .call-to-action {
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #f44336;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff6655;
+    }
+
+    footer {
+      background-color: rgb(244, 156, 40);
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+  <header>
+    <div class="logo"></div>
+    <nav>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
+          <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+          <li><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
+          <li><a href="{{ url_for('register') }}">Report</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <main>
+    <DynamicContent></DynamicContent>
+
+    <!-- Other sections of the landing page -->
+  </main>
+
+  <section class="hero">
+    <h1>Welcome to JusticeGuard</h1>
+    <p>An efficient incident reporting app to ensure safety and security</p>
+  </section>
+
+  <section class="features">
+    <h2><span>Fundamental</span> Objectives</h2>
+    <ul>
+      <li>Enhance safety and security in various environments.</li>
+      <li>Provide a reliable tool for incident reporting, management, and analysis.</li>
+      <li>Promote a proactive approach to maintaining a secure environment.</li>
+      <li>Enable efficient documentation and tracking of incidents.</li>
+      <li>Facilitate real-time notifications and alerts.</li>
+      <li>Generate comprehensive reports for analysis and decision-making.</li>
+      <li>User-friendly interface accessible to users of all technical backgrounds.</li>
+      <li>Customizable workflows to adapt to different organizational needs.</li>
+      <li>Create a culture of safety and security in educational, corporate, and community settings.</li>
+      <li>Empower effective incident response and risk mitigation.</li>
+    </ul>
+  </section>
+
+  <section class="call-to-action">
+    <a href="{{ url_for('register') }}" class="btn">Sign Up Now</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 JusticeGuard. All rights reserved.</p>
+  </footer>
+</body>
+</html>
