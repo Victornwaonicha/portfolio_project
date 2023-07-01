@@ -25,7 +25,7 @@ JusticeGuard is a web application designed to streamline the process of creating
 
 1. Clone the repository:
    ```shell
-   git clone https://github.com/your-username/justiceguard.git
+   git clone https://github.com/victornwaonicha/justiceguard.git
    ```
 
 2. Navigate to the project directory:
