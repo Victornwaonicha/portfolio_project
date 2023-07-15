@@ -1,81 +1,210 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JusticeGuard - Dashboard</title>
   <style>
-    /* CSS Styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+    .nav-container {
+      background-color: #02029c;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      align-items: center;
     }
-
-    header {
-      background-color: #333;
-      padding: 20px;
-      color: #fff;
+    
+    .my-logo-1 {
+      color: white;
+      margin-left: 20px;
+      margin-right: 20px;
     }
-
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
+    
+    .wrap-nav-text {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 20px;
+      color: white;
+      font-size: 17px;
     }
-
-    nav ul li {
+    
+    .logout {
       display: inline-block;
-      margin-right: 10px;
+      cursor: pointer;
+      margin-left: 20px;
     }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px;
+    
+    .nav-text {
+      cursor: pointer;
+      margin-left: 20px;
+      color: white;
     }
-
-    .content {
-      padding: 20px;
+    
+    .wlcm-text {
+      margin-top: 50px;
+      margin-left: 50px;
+      color: #02029c;
     }
-
-    h2 {
-      color: #333;
-      font-size: 24px;
-      margin-bottom: 20px;
+    
+    .text-underline-1 {
+      margin-top: 5px;
+      border: 2px solid #02029c;
+      width: 200px;
+      margin-left: 50px;
     }
-
-    p {
-      color: #333;
+    
+    .text-underline-2 {
+      border: 2px solid white;
+      width: 150px;
+      margin: auto;
     }
-
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
+    
+    .wrap-details {
+      background-color: #02029c;
+      width: 1000px;
+      height: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    
+    .my-dashboard {
       text-align: center;
+      color: white;
+      padding-top: 30px;
+      font-size: 20px;
+      margin-bottom: 5px;
+      font-size: 20px;
+    }
+    
+    .box-1,
+    .box-2 {
+      width: 400px;
+      height: 300px;
+      border: 2px solid white;
+      background-color: white;
+    }
+    
+    .wrap-boxes {
+      display: flex;
+      column-gap: 90px;
+      margin-top: 50px;
+    }
+    
+    .box-1,
+    .btn-1 {
+      margin-left: auto;
+    }
+    
+    .box-2,
+    .btn-2 {
+      margin-right: auto;
+    }
+    
+    .wrap-report-btn {
+      margin-top: 20px;
+      display: flex;
+      column-gap: 300px;
+    }
+    
+    .btn-1,
+    .btn-2 {
+      border: 2px solid white;
+      width: 200px;
+      text-align: center;
+      padding: 10px 0px;
+      border-radius: 50px;
+      color: white;
+      background-color: transparent;
+      transition-duration: 0.4s;
+      -webkit-transition-duration: 0.4s;
+      cursor: pointer;
+    }
+    
+    .btn-1:hover,
+    .btn-2:hover {
+      background-color: white;
+      color: #02029c;
+    }
+    
+    .report-icon-1,
+    .report-icon-2 {
+      margin-left: 180px;
+      padding-top: 20px;
+    }
+    
+    .report-icon-1 {
+      height: 80px;
+    }
+
+    .footer-text {
+      color: white;
+      text-align: center;
+    }
+    
+    footer {
+      background-color: #02029c;
+      width: 100%;
+      height: 50px;
+    }
+    
+    .logout-btn {
+      border: none;
+      background-color: transparent;
+      color: white;
+      cursor: pointer;
+      font-size: 17px;
+    }
+    
+    .logout-btn:hover {
+      text-decoration: underline;
+    }
+    
+    .create-report-link,
+    .view-report-link {
+      color: white;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="content">
-    <h2>Welcome, {{ current_user.username }}!</h2>
-    <p>This is your dashboard.</p>
-    <p><a href="/create_report">Create Report</a></p>
-    <p><a href="/view_reports">View Reports</a></p>
-    <p><a href="/logout">Logout</a></p>
+  <nav class="nav-container">
+    <h1 class="my-logo-1">JusticeGuard</h1>
+    <div class="wrap-nav-text">
+      <a href="{{ url_for('landing') }}"><span class="nav-text">Home</span></a>
+      <span class="nav-text">About</span>
+      <span class="nav-text">Contact</span>
+      <div class="logout">
+        <a href="/" class="logout-btn">Logout</a>
+      </div>
+    </div>
+  </nav>
+  <h1 class="wlcm-text">Welcome, {{ current_user }}</h1>
+  <hr class="text-underline-1">
+  <div class="wrap-details">
+    <p class="my-dashboard">This is your Dashboard.</p>
+    <hr class="text-underline-2">
+    <div class="wrap-boxes">
+      <div class="box-1">
+        <img src="/static/report.png" class="report-icon-1">
+      </div>
+      <div class="box-2">
+        <img src="/static/search.png" class="report-icon-2">
+      </div>
+    </div>
+    <div class="wrap-report-btn">
+      <div class="btn-1">
+        <a href="create_report" class="create-report-link">Create Report</a>
+      </div>
+      <div class="btn-2">
+        <a href="view_reports" class="view-report-link">View Report</a>
+      </div>
+    </div>
   </div>
-
   <footer>
-    <p>&copy; 2023 JusticeGuard. All rights reserved.</p>
+    <p class="footer-text">&copy;2023 JusticeGuard. All Rights Reserved.</p>
   </footer>
 </body>
 </html>

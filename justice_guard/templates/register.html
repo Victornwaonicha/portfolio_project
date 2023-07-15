@@ -1,118 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>JusticeGuard - Register</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
   <style>
-    /* CSS Styles */
-    body {
+    * {
+      margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
     }
-
-    header {
-      background-color: #333;
-      padding: 20px;
-      color: #fff;
-    }
-
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      display: inline-block;
-      margin-right: 10px;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px;
-    }
-
-    .content {
-      padding: 20px;
-    }
-
-    h2 {
-      color: #333;
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    form {
-      margin-bottom: 20px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .form-group input {
+    .container {
+      background-image: url(/static/background-img.webp);
       width: 100%;
-      padding: 10px;
+      height: 100vh;
+      background-size: cover;
+      position: absolute;
     }
-
-    .form-group button {
-      background-color: #333;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
+    .wrap-login-1 {
+      width: 400px;
+      height: 450px;
+      background-color: hsl(0, 0%, 0%, 0.2);
+      margin: 50px auto;
+      border-radius: 30px;
+    }
+    .wrap-login-2 {
+      width: 450px;
+      height: 520px;
+      background-color: hsl(0, 0%, 0%, 0.2);
+      margin: 50px auto;
+      border-radius: 30px;
+    }
+    .my-logo {
+      color: white;
+      padding-top: 50px;
+      padding-left: 50px;
+    }
+    .login-header {
+      color: white;
+      padding-top: 50px;
+      text-align: center;
+      font-size: 20px;
+    }
+    .first-p-text {
+      color: white;
+      margin-top: 5px;
+      font-size: 13px;
+      text-align: center;
+    }
+    .input-text-2 {
+      background-color: transparent;
+      border-left: none;
+      border-top: none;
+      border-right: none;
+      width: 300px;
+      margin-left: 70px;
+      margin-top: 60px;
+      border-bottom: 2px solid white;
+      padding: 8px;
+      color: white;
+    }
+    .input-email {
+      background-color: transparent;
+      border-left: none;
+      border-top: none;
+      border-right: none;
+      width: 300px;
+      margin-left: 70px;
+      margin-top: 30px;
+      border-bottom: 2px solid white;
+      padding: 8px;
+      color: white;
+    }
+    ::placeholder {
+      color: white;
+    }
+    .input-password-2 {
+      background-color: transparent;
+      border-left: none;
+      border-top: none;
+      border-right: none;
+      width: 300px;
+      margin-left: 70px;
+      margin-top: 30px;
+      border-bottom: 2px solid white;
+      padding: 8px;
+      color: white;
+    }
+    .pass-length-2 {
+      margin-left: 70px;
+      margin-top: 4px;
+      color: white;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+    .login-btn-2 {
+      padding: 7px 100px;
+      font-size: 16px;
+      border-radius: 10px;
+      color: white;
+      background-color: transparent;
+      margin-top: 50px;
+      margin-left: 100px;
+      cursor: pointer;
+      transition-duration: 0.4s;
+      -webkit-transition-duration: 0.4s;
+      border: 2px solid white;
+    }
+    .second-p-text-2 {
+      color: white;
+      font-size: 12px;
+      margin-left: 105px;
+      margin-top: 5px;
+      letter-spacing: 1px;
+    }
+    .wrap-icons {
+      display: flex;
+      column-gap: 30px;
+      margin-top: 20px;
+    }
+    .facebook {
+      margin-left: auto;
       cursor: pointer;
     }
-
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
+    .gmail {
+      margin-right: auto;
+      cursor: pointer;
+    }
+    a:link {
+      color: white;
+      text-decoration: none;
+    }
+    a:visited {
+      color: white;
+      text-decoration: none;
+    }
+    a:hover {
+      color: red;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/dashboard">Dashboard</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="content">
-    <h2 style="color: #333; font-size: 24px; margin-bottom: 20px;">Register</h2>
-    <form>
-      <div class="form-group">
-        <label for="username" style="display: block; font-weight: bold; margin-bottom: 5px;">Username:</label>
-        <input type="text" id="username" name="username" required style="width: 100%; padding: 10px;">
+  <div class="container">
+    <h1 class="my-logo">JusticeGuard</h1>
+    <div class="wrap-login-2">
+      <h1 class="login-header">HELLO THERE!</h1>
+      <p class="first-p-text">Create an account to report an incidence.</p>
+      <form method="POST" action="/register">
+        <input type="text" class="input-text-2" placeholder="Username" name="username" required>
+        <input type="email" class="input-email" placeholder="Email" name="email" required>
+        <input type="password" class="input-password-2" placeholder="Password" name="password" minlength="12" required>
+        <p class="pass-length-2">Input at least 12 characters</p>
+        <button type="submit" class="login-btn-2">Sign Up</button>
+      </form>
+      <p class="second-p-text-2">Already have an account? <a href="login.html">Login</a></p>
+      <div class="wrap-icons">
+        <!-- Your social icons here -->
       </div>
-      <div class="form-group">
-        <label for="email" style="display: block; font-weight: bold; margin-bottom: 5px;">Email:</label>
-        <input type="email" id="email" name="email" required style="width: 100%; padding: 10px;">
-      </div>
-      <div class="form-group">
-        <label for="password" style="display: block; font-weight: bold; margin-bottom: 5px;">Password:</label>
-        <input type="password" id="password" name="password" required style="width: 100%; padding: 10px;">
-      </div>
-      <div class="form-group">
-        <button type="submit" style="background-color: #333; color: #fff; border: none; padding: 10px 20px; cursor: pointer;">Register</button>
-      </div>
-    </form>
+    </div>
   </div>
-
-  <footer>
-    <p>&copy; 2023 JusticeGuard. All rights reserved.</p>
-  </footer>
 </body>
 </html>

@@ -83,7 +83,7 @@ def submit_contact():
 
 
 # Define the report creation route
-@app.route('/reports/create', methods=['GET', 'POST'])
+@app.route('/create_report', methods=['GET', 'POST'])
 @login_required
 def create_report():
     if request.method == 'POST':
@@ -103,12 +103,7 @@ def create_report():
         return render_template('create_report.html')
 
 
-# Define the view reports route
-@app.route('/reports')
-@login_required
-def view_reports():
-    reports = Report.query.all()
-    return render_template('view_reports.html', reports=reports)
+
 
 # Define the logout route
 @app.route('/logout')
@@ -166,7 +161,15 @@ with app.app_context():
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    return render_template('dashboard.html')
+    return render_template('dashboard.html', current_user=current_user.username)
+
+
+# Define the view reports route
+@app.route('/view_reports')
+@login_required
+def view_reports():
+    reports = Report.query.all()
+    return render_template('view_reports.html', reports=reports)
 
 
 @app.route('/reports/<int:report_id>/delete', methods=['POST'])

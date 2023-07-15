@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Justice Guard - Create Report</title>
+  <title>Justice Guard - Create Report</title>
 </head>
 <body>
-    <h1>Create a New Report</h1>
-    <form method="POST" action="/reports/create">
-        <label>Title:</label><br>
-        <input type="text" name="title" required><br>
+  <h1>Create a New Report</h1>
+  <form method="POST" action="{{ url_for('create_report') }}">
+    <label>Title:</label><br>
+    <input type="text" name="title" required><br>
 
-        <label>Description:</label><br>
-        <textarea name="description" rows="4" required></textarea><br>
+    <label>Description:</label><br>
+    <textarea name="description" rows="4" required></textarea><br>
 
-        <label>Location:</label><br>
-        <input type="text" name="location" required><br>
+    <label>Location:</label><br>
+    <input type="text" name="location" required><br>
 
-        <input type="submit" value="Create Report">
-    </form>
+    <input type="submit" value="Create Report">
+  </form>
 </body>
 </html>
 

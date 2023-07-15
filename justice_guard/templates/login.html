@@ -1,114 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>JusticeGuard - Login</title>
-  <style>
-    /* CSS Styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #333;
-      padding: 20px;
-      color: #fff;
-    }
-
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      display: inline-block;
-      margin-right: 10px;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px;
-    }
-
-    .content {
-      padding: 20px;
-    }
-
-    h2 {
-      color: #333;
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    form {
-      margin-bottom: 20px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 10px;
-    }
-
-    .form-group button {
-      background-color: #333;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
 </head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    background-image: url(/static/background-img.webp);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    position: absolute;
+  }
+  
+  .wrap-login-1 {
+    width: 400px;
+    height: 450px;
+    background-color: hsl(0, 0%, 0%, 0.2);
+    margin: 50px auto;
+    border-radius: 30px;
+  }
+  
+  .my-logo {
+    color: white;
+    padding-top: 50px;
+    padding-left: 50px;
+  }
+  
+  .login-header {
+    color: white;
+    padding-top: 50px;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  .first-p-text {
+    color: white;
+    margin-top: 5px;
+    font-size: 13px;
+    text-align: center;
+  }
+  
+  .input-text {
+    background-color: transparent;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: 60px;
+    border-bottom: 2px solid white;
+    padding: 8px;
+    color: white;
+  }
+  
+  .input-password {
+    background-color: transparent;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: 30px;
+    border-bottom: 2px solid white;
+    padding: 8px;
+    color: white;
+  }
+
+  .pass-length {
+    margin-left: 50px;
+    margin-top: 4px;
+    color: white;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .login-btn {
+    padding: 7px 100px;
+    font-size: 16px;
+    border-radius: 10px;
+    color: white;
+    background-color: transparent;
+    margin-top: 50px;
+    margin-left: 80px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    border: 2px solid white;
+  }
+
+  .second-p-text {
+    color: white;
+    font-size: 12px;
+    margin-left: 85px;
+    margin-top: 5px;
+    letter-spacing: 1px;
+  }
+
+  .wrap-icons {
+    display: flex;
+    column-gap: 30px;
+    margin-top: 20px;
+  }
+
+  .facebook {
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .gmail {
+    margin-right: auto;
+    cursor: pointer;
+  }
+
+  a:link, a:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: red;
+    text-decoration: underline;
+  }
+</style>
+
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/dashboard">Dashboard</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="content">
-    <h2>Login</h2>
-    <form action="/login" method="POST">
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+  <div class="container">
+    <h1 class="my-logo">JusticeGuard</h1>
+    <div class="wrap-login-1">
+      <h1 class="login-header">HELLO THERE!</h1>
+      <p class="first-p-text">Log in to report an incidence.</p>
+      <form action="/login" method="POST">
+        <input type="text" id="username" name="username" class="input-text" placeholder="Username" required>
+        <input type="password" id="password" name="password" class="input-password" placeholder="Password" minlength="12" required>
+        <p class="pass-length">Input at least 12 characters</p>
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+      <p class="second-p-text">Don't have an account? <a href="Register.html">SignUp</a></p>
+      <div class="wrap-icons">
+        <div class="facebook">
+          <img src="/static/facebook.png" class="icon">
+        </div>
+        <div class="gmail">
+          <img src="/static/gmail.png" class="icon">
+        </div>
       </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-      </div>
-      <div class="form-group">
-        <button type="submit">Login</button>
-      </div>
-    </form>
+    </div>
   </div>
-
-  <footer>
-    <p>&copy; 2023 JusticeGuard. All rights reserved.</p>
-  </footer>
 </body>
 </html>

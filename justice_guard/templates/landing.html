@@ -1,172 +1,305 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>JusticeGuard - Incident Reporting App</title>
-  <script>
-    new Vue({
-      el: '#app',
-    });
-  </script>
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing page</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+    .nav-container-2 {
+      background-color: hsl(0, 0%, 0%, 0.6);
+      width: 100%;
+      height: 100vh;
     }
-
-    header {
-      background-color: bisque;
-      padding: ;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      width: 150px;
-      height: 80px;
-      background: url("/static/2B2AEpO.png");
+    
+    .container-1 {
+      background-image: url(/static/landing-bgr-img.jpg);
+      width: 100%;
+      height: 100vh;
       background-size: cover;
-      background-position: center;
+      position: absolute;
     }
+    /* ... continue with the rest of the CSS code ... */
 
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
+    .wrap-nav-text-2{
+    padding-top: 18px;
+    float: right;
+    color: white;
+    font-size: 17px;
+    padding-right: 130px;
+    word-spacing: 30px;
+  }
+  .login{
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid white;
+    padding: 3px 12px;
+    border-radius: 50px;
+    transition-duration: 0.4s;
+    -webkit-animation-duration: 0.4s;
+  }
+  .login:hover{
+    background-color: #02029c;
+    border: 2px solid #02029c;
+  }
+  .my-logo-2{
+    display: inline-block;
+    color: white;
+    padding-left: 100px;
+    padding-top: 12px;
+    font-size: 25x;
+  }
+  .wraps-landing-btn{
+    display: inline-block;
+  }
+  .nav-text-3{
+    margin-right: 50px;
+    color: white;
+  }
+  .nav-text-1, .nav-text-2{
+    margin-right: 30px;
+    color: white;
+  }
+  
+  .landing-header{
+    color: white;
+    width: 1000px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 35px;
+  }
+  .intro-landing-text{
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    width: 890px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .wraps-landing-boxes{
+    position: relative;
+    background-color: red;
+  }
+  
+  .wraps-all-boxes{
+    width: 100%;
+    display: flex;
+    column-gap: 80px;
+  }
+  .landing-box-1{
+    background-image: url(/static/image-1.jpg);
+    background-size: cover;
+    width: 250px;
+    height: 330px;
+    margin-left: auto;
+    border-radius: 10px;
+  }
+  .landing-box-2, .landing-box-3{
+    background-image: url(/static/image-2.jpg);
+    background-size: cover;
+    width: 250px;
+    height: 265px;
+    float: bottom;
+    position: relative;
+    top: 65px;
+    border-radius: 10px;
+  }
+  
+  .landing-box-3{
+    background-image: url(/static/image-3.jpg);
+    background-size: cover;
+    width: 250px;
+    height: 265px;
+    float: bottom;
+    position: relative;
+    top: 65px;
+    border-radius: 10px;
+  }
+  
+  .landing-box-4{
+    background-image: url(/static/images-5.jpeg);
+    background-size: cover;
+    width: 250px;
+    height: 330px;
+    margin-right: auto;
+    border-radius: 10px;
+  }
+  .report-btn{
+    position: relative;
+    border: 2px solid white;
+    background-color: black;
+    text-align: center;
+    padding: 9px 0px;
+    width: 180px;
+    color: white;
+    font-size: 17px;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    left: 550px;
+    margin-top: 40px;
+    transition-duration: 0.4s;
+    -webkit-animation-duration: 0.4s;
+    cursor: pointer;
+  }
+  .report-btn:hover{
+    background-color: #02029c;
+    border: 2px solid #02029c;
+  }
+  .wraps-second-part{
+    background-image: url(/static/bgr-image-3.jpeg);
+    background-size: cover;
+    background-color: red;
+    height: 500px;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .sub-wraps-objective{
+    height: 450px;
+    position: relative;
+    background-color: hsl(0, 0%, 0%, 0.6);
+    width: 100%;
+  }
+  
+  .about-header{
+    text-align: center;
+    color: white;
+    position: relative;
+    padding-top: 30px;
+  }
+  .landing-line-1{
+    width: 230px;
+    border: 2px solid white;
+    margin-left: 460px;
+    margin-top: 5px;
+  }
+  .wraps-objectives{
+    margin-top: 30px;
+    display: inline-block;
+  }
+  .landing-entity{
+    margin-left: 100px;
+    margin-right: 20px;
+    color: white;
+    display: inline-block;
+    height: 25px;
+  }
+  .text-separate{
+    margin-bottom: 5px;
+    color: white;
+    letter-spacing: 1px;
+  }
+  /*
+  .landing-footer{
+    width: 100%;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    bottom: -500px;
+  }
+  */
+  .landing-footer{
+    background-color: #02029c;
+    position: relative;
+    width: 100%;
+    height: 50px;
+  }
+  .login {
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid white;
+  padding: 3px 12px;
+  border-radius: 50px;
+  transition-duration: 0.4s;
+  -webkit-animation-duration: 0.4s;
+  color: white; /* Added line to change button color */
+}
+.landing-footer {
+  text-align: center;
+  background-color: #02029c;
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
 
-    nav ul li {
-      margin-right: 20px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #777;
-      font-weight: bold;
-    }
-
-    .hero {
-      background-image: url('/static/hero-imagee.jpg');
-      background-size: cover;
-      background-position: center;
-      color: #ff6655;
-      text-align: center;
-      padding: 100px 0;
-      height: 68vh; /* Added */
-    }
-
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-
-    .features {
-      background-color: whitesmoke;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .features h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    .features ul {
-      list-style: armenian;
-      padding: 0;
-      margin: 0;
-    }
-
-    .features li {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .call-to-action {
-      text-align: center;
-      padding: 50px 0;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #f44336;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #ff6655;
-    }
-
-    footer {
-      background-color: rgb(244, 156, 40);
-      padding: 20px;
-      text-align: center;
-      font-size: 14px;
-      color: #777;
-    }
+.landing-footer p {
+  color: white;
+}
   </style>
 </head>
 <body>
-
-  <div id="app">
-  <header>
-    <div class="logo"></div>
-    <nav>
-      <nav>
-        <ul>
-          <li><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
-          <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
-          <li><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
-          <li><a href="{{ url_for('register') }}">Report</a></li>
-        </ul>
-      </nav>
-  </header>
-
-  <main>
-    <DynamicContent></DynamicContent>
-
-    <!-- Other sections of the landing page -->
-  </main>
-
-  <section class="hero">
-    <h1>Welcome to JusticeGuard</h1>
-    <p>An efficient incident reporting app to ensure safety and security</p>
-  </section>
-
-  <section class="features">
-    <h2><span>Fundamental</span> Objectives</h2>
-    <ul>
-      <li>Enhance safety and security in various environments.</li>
-      <li>Provide a reliable tool for incident reporting, management, and analysis.</li>
-      <li>Promote a proactive approach to maintaining a secure environment.</li>
-      <li>Enable efficient documentation and tracking of incidents.</li>
-      <li>Facilitate real-time notifications and alerts.</li>
-      <li>Generate comprehensive reports for analysis and decision-making.</li>
-      <li>User-friendly interface accessible to users of all technical backgrounds.</li>
-      <li>Customizable workflows to adapt to different organizational needs.</li>
-      <li>Create a culture of safety and security in educational, corporate, and community settings.</li>
-      <li>Empower effective incident response and risk mitigation.</li>
-    </ul>
-  </section>
-
-  <section class="call-to-action">
-    <a href="{{ url_for('register') }}" class="btn">Sign Up Now</a>
-  </section>
-
+  <div class="container-1">
+    <nav class="nav-container-2">
+      <h1 class="my-logo-2">JusticeGuard</h1>
+      <div class="wrap-nav-text-2">
+        <a href="{{ url_for('login') }}"><span class="nav-text-1">Dashboard</span></a>
+        <span class="nav-text-2">About</span>
+        <a href="mailto:victornwaonicha@gmail.com"><span class="nav-text-3">Contact</span></a>
+        <a href="{{ url_for('login') }}"><div class="login">Login</div></a>
+        <a href="{{ url_for('register') }}"><div class="login">Register</div></a>
+      </div>
+  <div class="wraps-landing-header">
+    <h1 class="landing-header">Secure, Transparent, and Just: Welcome To JusticeGuard.</h1>
+    <p class="intro-landing-text">Welcome to our reporting website, where you can easily and securely report incidents. We believe that everyone deserves to feel safe and secure, and we are committed to ensuring that incidents are promptly addressed and resolved. Together, we can help make JusticeGuard a safer and more secure place for everyone.</p>
+    <button onclick="window.location.href='login'" type="button" class="report-btn">Report Now</button>
+    </div>
+    <div class="wraps-all-boxes">
+      <div class="landing-box-1">
+      </div>
+      <div class="landing-box-2">
+      </div>
+      <div class="landing-box-3">
+      </div>
+      <div class="landing-box-4">
+      </div>
+    </div>
+  </nav>
+  <div class="wraps-second-part">
+    <div class="sub-wraps-objective">
+  <h1 class="about-header">Fundamental Objectives</h1><hr class="landing-line-1">
+  <div class="wraps-objectives">
+    <div class="text-separate">
+    <span class="landing-entity">&diams;</span>Enhance safety and security in various enviroments.
+    </div>
+    <div class="text-separate">
+    <span class="landing-entity">&diams;</span>Provide a reliable tool for incident reporting, management, and analysis.
+    </div>
+    <div class="text-separate">
+    <span class="landing-entity">&diams;</span>Promote a proactive approach to maintaining a secure enviroment.
+    </div>
+    <div class="text-separate">
+    <span class="landing-entity">&diams;</span>Enable efficient documentationand tracking of incidents.
+    </div>
+    <div class="text-separate">
+    <span class="landing-entity">&diams;</span>Facilitate real-time notifications and alerts.
+    </div>
+    <div class="text-separate"> 
+    <span class="landing-entity">&diams;</span>Generate comprehensive reports for analysis and decision-making.
+    </div>
+    <div class="text-separate">
+    <span class="landing-entity">&diams;</span>User-friendly interface accessible to users of all technical backgrounds.
+    </div>
+    <div class="text-separate">
+    <span class="landing-entity">&diams;</span>Customizable workflows to adapt to different organizational needs.
+    </div>
+    <div class="text-separate">
+    <span class="landing-entity">&diams;</span>Create a cultural of safety and security in educational, corporate, and community settings.
+    </div>
+    <div class="text-separate">
+    <span class="landing-entity">&diams;</span>Empower effective incident response and risk mitigation FOR GOOD. 
+    </div>
+  </div>
+  </div>
+  <div class="landing-footer">
+    <p class="copyright">&copy;2023 JusticeGuard. All Rights Reserved.</p>
+  </div>
+  </div>
   <footer>
-    <p>&copy; 2023 JusticeGuard. All rights reserved.</p>
+    <p class="copyright">&copy;2023 JusticeGuard. All Rights Reserved.</p>
   </footer>
+</div>
 </body>
 </html>

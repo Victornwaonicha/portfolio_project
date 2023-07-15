@@ -1,0 +1,524 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  .container{
+    background-image: url(/Images/background-img.webp);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    position: absolute;
+  }
+  .wrap-login-1{
+    width: 400px;
+    height: 450px;
+    background-color: hsl(0, 0%, 0%, 0.2);
+    margin: 50px auto;
+    border-radius: 30px;
+  }
+  
+  .wrap-login-2{
+    width: 450px;
+    height: 520px;
+    background-color: hsl(0, 0%, 0%, 0.2);
+    margin: 50px auto;
+    border-radius: 30px;
+  }
+  
+  .my-logo{
+    color: white;
+    padding-top: 50px;
+    padding-left: 50px;
+  }
+  .login-header{
+    color: white;
+    padding-top: 50px;
+    text-align: center;
+    font-size: 20px;
+  }
+  .first-p-text{
+    color: white;
+    margin-top: 5px;
+    font-size: 13px;
+    text-align: center;
+  }
+  .input-text{
+    background-color: transparent;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: 60px;
+    border-bottom: 2px solid white;
+    padding: 8px;
+  }
+  
+  .input-text-2{
+    background-color: transparent;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    width: 300px;
+    margin-left: 70px;
+    margin-top: 60px;
+    border-bottom: 2px solid white;
+    padding: 8px;
+  }
+  
+  .input-email{
+    background-color: transparent;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    width: 300px;
+    margin-left: 70px;
+    margin-top: 30px;
+    border-bottom: 2px solid white;
+    padding: 8px;
+  }
+  
+  ::placeholder{
+    color: white;
+  }
+  .input-password{
+    background-color: transparent;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: 30px;
+    border-bottom: 2px solid white;
+    padding: 8px;
+  }
+  
+  .input-password-2{
+    background-color: transparent;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    width: 300px;
+    margin-left: 70px;
+    margin-top: 30px;
+    border-bottom: 2px solid white;
+    padding: 8px;
+  }
+  
+  .pass-length{
+    margin-left: 50px;
+    margin-top: 4px;
+    color: white;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  
+  .pass-length-2{
+    margin-left: 70px;
+    margin-top: 4px;
+    color: white;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  
+  .login-btn{
+   padding: 7px 100px;
+   font-size: 16px;
+   border-radius: 10px;
+   color: white;
+   background-color: transparent;
+   margin-top: 50px;
+   margin-left: 80px;
+   cursor: pointer;
+   transition-duration: 0.4s;
+   -webkit-transition-duration: 0.4s;
+   border: 2px solid white;
+  }
+  
+  .login-btn-2{
+    padding: 7px 100px;
+    font-size: 16px;
+    border-radius: 10px;
+    color: white;
+    background-color: transparent;
+    margin-top: 50px;
+    margin-left: 100px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    border: 2px solid white;
+   }
+  
+  .login-btn:hover, .login-btn-2:hover{
+    background-color: white;
+    border: 2px solid white;
+    color: #02029c;
+  }
+  
+  .second-p-text{
+    color: white;
+    font-size: 12px;
+    margin-left: 85px;
+    margin-top: 5px;
+    letter-spacing: 1px;
+  }
+  
+  .second-p-text-2{
+    color: white;
+    font-size: 12px;
+    margin-left: 105px;
+    margin-top: 5px;
+    letter-spacing: 1px;
+  }
+  
+  .wrap-icons{
+    display: flex;
+    column-gap: 30px;
+    margin-top: 20px;
+  }
+  .facebook{
+    margin-left: auto;
+    cursor: pointer;
+  }
+  .gmail{
+    margin-right: auto;
+    cursor: pointer;
+  }
+  a:link{
+    color: white;
+    text-decoration: none;
+  }
+  a:visited{
+    color: white;
+    text-decoration: none;
+  }
+  a:hover{
+    color: red;
+    text-decoration: underline;
+  }
+  
+  /* styles for dashboard page */
+  
+  .nav-container{
+    background-color: #02029c;
+    width: 100%;
+    height: 50px;
+  }
+  .my-logo-1{
+    display: inline-block;
+    color: white;
+    padding-left: 100px;
+    padding-top: 12px;
+  }
+  .wrap-nav-text{
+    padding-top: 18px;
+    float: right;
+    color: white;
+    font-size: 17px;
+    padding-right: 200px;
+    word-spacing: 60px;
+  }
+  .logout{
+    display: inline-block;
+    cursor: pointer;
+  }
+  .nav-text{
+    cursor: pointer;
+  }
+  
+  .wlcm-text{
+    margin-top: 50px;
+    margin-left: 50px;
+    color: #02029c;
+  }
+  .text-underline-1{
+    margin-top: 5px;
+    border: 2px solid #02029c;
+    width: 200px;
+    margin-left: 50px;
+  }
+  
+  .text-underline-2{
+    border: 2px solid white;
+    width: 150px;
+    margin: auto;
+  }
+  
+  .wrap-details{
+    background-color: #02029c;
+    width: 1000px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .my-dashboard{
+    text-align: center;
+    color: white;
+    padding-top: 30px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+  
+  .box-1, .box-2{
+    width: 400px;
+    height: 300px;
+    border: 2px solid white;
+    background-color: white;
+  }
+  
+  .wrap-boxes{
+    display: flex;
+    column-gap: 90px;
+    margin-top: 50px;
+  }
+  .box-1, .btn-1{
+    margin-left: auto;
+  }
+  .box-2, .btn-2{
+    margin-right: auto;
+  }
+  .wrap-report-btn{
+    margin-top: 20px;
+    display: flex;
+    column-gap: 300px;
+  }
+  .btn-1, .btn-2{
+    border: 2px solid white;
+    width: 200px;
+    text-align: center;
+    padding: 10px 0px;
+    border-radius: 50px;
+    color: white;
+    background-color: transparent;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .btn-1:hover, .btn-2:hover{
+    background-color: white;
+    color: #02029c;
+  }
+  
+  .report-icon-1, .report-icon-2{
+    margin-left: 180px;
+    padding-top: 20px;
+  }
+  .report-icon-1{
+    height: 80px;
+  }
+  footer{
+    background-color: #02029c;
+    width: 100%;
+    height: 50px;
+  }
+  .copyright{
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  /* styles for landing page */
+  
+  .nav-container-2{
+    background-color: hsl(0, 0%, 0%, 0.6);
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .container-1{
+    background-image: url(/Images/landing-bgr-img.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    position: absolute;
+  }
+  .wrap-nav-text-2{
+    padding-top: 18px;
+    float: right;
+    color: white;
+    font-size: 17px;
+    padding-right: 130px;
+    word-spacing: 30px;
+  }
+  .login{
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid white;
+    padding: 3px 12px;
+    border-radius: 50px;
+    transition-duration: 0.4s;
+    -webkit-animation-duration: 0.4s;
+  }
+  .login:hover{
+    background-color: #02029c;
+    border: 2px solid #02029c;
+  }
+  .my-logo-2{
+    display: inline-block;
+    color: white;
+    padding-left: 100px;
+    padding-top: 12px;
+    font-size: 25x;
+  }
+  .wraps-landing-btn{
+    display: inline-block;
+  }
+  .nav-text-3{
+    margin-right: 50px;
+  }
+  .nav-text-1, .nav-text-2{
+    margin-right: 30px;
+  }
+  
+  .landing-header{
+    color: white;
+    width: 1000px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 35px;
+  }
+  .intro-landing-text{
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    width: 890px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .wraps-landing-boxes{
+    position: relative;
+    background-color: red;
+  }
+  
+  .wraps-all-boxes{
+    width: 100%;
+    display: flex;
+    column-gap: 80px;
+  }
+  .landing-box-1{
+    background-image: url(/image-1.jpg);
+    background-size: cover;
+    width: 250px;
+    height: 330px;
+    margin-left: auto;
+    border-radius: 10px;
+  }
+  .landing-box-2, .landing-box-3{
+    background-image: url(/image-2.jpg);
+    background-size: cover;
+    width: 250px;
+    height: 265px;
+    float: bottom;
+    position: relative;
+    top: 65px;
+    border-radius: 10px;
+  }
+  
+  .landing-box-3{
+    background-image: url(/image-3.jpg);
+    background-size: cover;
+    width: 250px;
+    height: 265px;
+    float: bottom;
+    position: relative;
+    top: 65px;
+    border-radius: 10px;
+  }
+  
+  .landing-box-4{
+    background-image: url(/images-5.jpeg);
+    background-size: cover;
+    width: 250px;
+    height: 330px;
+    margin-right: auto;
+    border-radius: 10px;
+  }
+  .report-btn{
+    position: relative;
+    border: 2px solid white;
+    background-color: black;
+    text-align: center;
+    padding: 9px 0px;
+    width: 180px;
+    color: white;
+    font-size: 17px;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    left: 550px;
+    margin-top: 40px;
+    transition-duration: 0.4s;
+    -webkit-animation-duration: 0.4s;
+    cursor: pointer;
+  }
+  .report-btn:hover{
+    background-color: #02029c;
+    border: 2px solid #02029c;
+  }
+  .wraps-second-part{
+    background-image: url(/bgr-image-3.jpeg);
+    background-size: cover;
+    background-color: red;
+    height: 500px;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .sub-wraps-objective{
+    height: 450px;
+    position: relative;
+    background-color: hsl(0, 0%, 0%, 0.6);
+    width: 100%;
+  }
+  
+  .about-header{
+    text-align: center;
+    color: white;
+    position: relative;
+    padding-top: 30px;
+  }
+  .landing-line-1{
+    width: 230px;
+    border: 2px solid white;
+    margin-left: 460px;
+    margin-top: 5px;
+  }
+  .wraps-objectives{
+    margin-top: 30px;
+    display: inline-block;
+  }
+  .landing-entity{
+    margin-left: 100px;
+    margin-right: 20px;
+    color: white;
+    display: inline-block;
+    height: 25px;
+  }
+  .text-separate{
+    margin-bottom: 5px;
+    color: white;
+    letter-spacing: 1px;
+  }
+  /*
+  .landing-footer{
+    width: 100%;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    bottom: -500px;
+  }
+  */
+  .landing-footer{
+    background-color: #02029c;
+    position: relative;
+    width: 100%;
+    height: 50px;
+  }

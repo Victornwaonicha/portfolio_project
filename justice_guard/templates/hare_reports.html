@@ -1,0 +1,30 @@
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Date Reported</th>
+            <th>User</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for report in reports %}
+            <tr>
+                <td>{{ report.title }}</td>
+                <td>{{ report.description }}</td>
+                <td>{{ report.location }}</td>
+                <td>{{ report.date_reported }}</td>
+                <td>{{ report.user.username }}</td>
+                <td>
+                    <form action="{{ url_for('delete_report', report_id=report.id) }}" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit">Delete</button>
+                    </form>
+                    <a href="{{ url_for('share_report', report_id=report.id) }}">Share</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
