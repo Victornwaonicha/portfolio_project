@@ -4,6 +4,9 @@
 
 JusticeGuard is a web application designed to streamline the process of creating and managing reports related to justice and law enforcement. It provides a user-friendly interface for authorized users to create, view, and manage reports securely.
 
+<img width="1792" alt="Screenshot" src="https://github.com/Victornwaonicha/portfolio_project/assets/113601482/8db4fd0e-e745-4605-b657-3f281ac33907">
+
+
 ## Features
 
 - User authentication: Secure login and registration system for authorized users.
