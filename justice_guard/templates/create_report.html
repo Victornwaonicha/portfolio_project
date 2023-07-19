@@ -2,21 +2,97 @@
 <html>
 <head>
   <title>Justice Guard - Create Report</title>
+  <style>
+    body {
+      background-image: url(/static/background-img.webp);
+      font-family: Arial;, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-size: cover;
+    }
+
+    .my-logo {
+      color: white;
+      padding-top: 8px;
+      padding-left: 30px;
+      font-size: 25x;
+    }
+    
+    .create-header {
+      color: white;
+      padding-top: 50px;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .wrap-create{
+      width: 400px;
+      height: 450px;
+      background-color: hsl(0, 0%, 0%, 0.2);
+      margin: 50px auto;
+    border-radius: 30px;
+    }
+    
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #555;
+    }
+  </style>
 </head>
 <body>
-  <h1>Create a New Report</h1>
-  <form method="POST" action="{{ url_for('create_report') }}">
-    <label>Title:</label><br>
-    <input type="text" name="title" required><br>
+  <h1 class="my-logo">JusticeGuard</h1>
+  <div  class="wrap-create">
+    <div>
+      <h1 class="create-header">Create a New Report</h1>
+    </div>
+      <form method="POST" action="{{ url_for('create_report') }}">
+      <label>Title:</label><br>
+      <input type="text" name="title" required><br>
 
-    <label>Description:</label><br>
-    <textarea name="description" rows="4" required></textarea><br>
+      <label>Description:</label><br>
+      <textarea name="description" rows="4" required></textarea><br>
 
-    <label>Location:</label><br>
-    <input type="text" name="location" required><br>
+      <label>Location:</label><br>
+      <input type="text" name="location" required><br>
 
-    <input type="submit" value="Create Report">
+      <input class="creat-btn" type="submit" value="Create Report">
+  </div>
   </form>
 </body>
 </html>
+
 

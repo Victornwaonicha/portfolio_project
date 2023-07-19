@@ -148,10 +148,11 @@
     <div class="wrap-login-2">
       <h1 class="login-header">HELLO THERE!</h1>
       <p class="first-p-text">Create an account to report an incidence.</p>
-      <form method="POST" action="/register">
+      <form method="POST" action="{{ url_for('register') }}">
         <input type="text" class="input-text-2" placeholder="Username" name="username" required>
         <input type="email" class="input-email" placeholder="Email" name="email" required>
         <input type="password" class="input-password-2" placeholder="Password" name="password" minlength="12" required>
+        <input type="text" class="input-text-2" placeholder="Full Name" name="fullname" required>
         <p class="pass-length-2">Input at least 12 characters</p>
         <button type="submit" class="login-btn-2">Sign Up</button>
       </form>

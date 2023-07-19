@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <style>
+    /* Add your custom styles for the profile page here */
+    /* Navbar styles */
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .navbar li:last-child {
+      margin-right: 0;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    .navbar a:hover {
+      background-color: #555;
+    }
+
+    /* Profile section styles */
+    .profile {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .profile h1 {
+      font-size: 24px;
+    }
+
+    .profile p {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .profile-info {
+      margin-top: 20px;
+    }
+
+    .profile-info label {
+      font-weight: bold;
+    }
+
+    .profile-info p {
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <ul>
+      <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+      <li><a href="{{ url_for('profile') }}">Profile</a></li>
+      <li><a href="{{ url_for('logout') }}">Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Profile section -->
+  <div class="profile">
+    <h1>User Profile</h1>
+    <p>Welcome, {{ username }}!</p>
+
+    <div class="profile-info">
+      <label>Name:</label>
+      <p>{{ user.name }}</p>
+    </div>
+
+    <div class="profile-info">
+      <label>Email:</label>
+      <p>{{ user.email }}</p>
+    </div>
+
+    <div class="profile-info">
+      <label>Role:</label>
+      <p>{{ user.role }}</p>
+    </div>
+
+    <!-- Add more profile information as needed -->
+  </div>
+</body>
+</html>

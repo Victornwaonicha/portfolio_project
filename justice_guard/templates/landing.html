@@ -19,7 +19,6 @@
       background-size: cover;
       position: absolute;
     }
-    /* ... continue with the rest of the CSS code ... */
 
     .wrap-nav-text-2{
     padding-top: 18px;
@@ -127,7 +126,7 @@
     margin-right: auto;
     border-radius: 10px;
   }
-  .report-btn{
+  .report-btn {
     position: relative;
     border: 2px solid white;
     background-color: black;
@@ -138,11 +137,20 @@
     font-size: 17px;
     letter-spacing: 1px;
     border-radius: 50px;
-    left: 750px;
+    left: 50%;
+    transform: translateX(-50%);
     margin-top: 40px;
     transition-duration: 0.4s;
     -webkit-animation-duration: 0.4s;
     cursor: pointer;
+  }
+
+  /* Responsive styles for the "Report Now" button */
+  @media screen and (max-width: 600px) {
+    .report-btn {
+      width: 140px;
+      font-size: 14px;
+    }
   }
   .report-btn:hover{
     background-color: #02029c;
@@ -231,75 +239,89 @@
   </style>
 </head>
 <body>
+  <!-- Main container -->
   <div class="container-1">
+    <!-- Navigation -->
     <nav class="nav-container-2">
       <h1 class="my-logo-2">JusticeGuard</h1>
       <div class="wrap-nav-text-2">
-        <a href="{{ url_for('login') }}"><span class="nav-text-1">Dashboard</span></a>
-        <a href="/about"><span class="nav-text-2">About</span></a>
-        <a href="mailto:victornwaonicha@gmail.com"><span class="nav-text-3">Contact</span></a>
-        <a href="{{ url_for('login') }}"><div class="login">Login</div></a>
-        <a href="{{ url_for('register') }}"><div class="login">Register</div></a>
+          <a href="/about"><span class="nav-text-2">About</span></a>
+          <a href="mailto:victornwaonicha@gmail.com"><span class="nav-text-3">Contact</span></a>
+        {% if current_user.is_authenticated %}
+          <a href="{{ url_for('dashboard') }}"><span class="nav-text-1">Dashboard</span></a>
+        {% else %}
+          <a href="{{ url_for('login') }}"><div class="login">Login</div></a>
+          <a href="{{ url_for('register') }}"><div class="login">Register</div></a>
+        {% endif %}
       </div>
-  <div class="wraps-landing-header">
-    <h1 class="landing-header">Secure, Transparent, and Just: Welcome To JusticeGuard.</h1>
-    <p class="intro-landing-text">Welcome to our reporting website, where you can easily and securely report incidents. We believe that everyone deserves to feel safe and secure, and we are committed to ensuring that incidents are promptly addressed and resolved. Together, we can help make JusticeGuard a safer and more secure place for everyone.</p>
-    <button onclick="window.location.href='login'" type="button" class="report-btn">Report Now</button>
-    </div>
-    <div class="wraps-all-boxes">
-      <div class="landing-box-1">
+      
+      <!-- Landing header and introduction -->
+      <div class="wraps-landing-header">
+        <h1 class="landing-header">Secure, Transparent, and Just: Welcome To JusticeGuard.</h1>
+        <p class="intro-landing-text">Welcome to our reporting website, where you can easily and securely report incidents. We believe that everyone deserves to feel safe and secure, and we are committed to ensuring that incidents are promptly addressed and resolved. Together, we can help make JusticeGuard a safer and more secure place for everyone.</p>
+        {% if current_user.is_authenticated %}
+          <a href="{{ url_for('dashboard') }}"><button type="button" class="report-btn">Report Now</button></a>
+        {% else %}
+          <button type="button" class="report-btn" onclick="window.location.href='{{ url_for('login') }}'">Report Now</button>
+        {% endif %}
       </div>
-      <div class="landing-box-2">
+      
+      <!-- Landing boxes -->
+      <div class="wraps-all-boxes">
+        <div class="landing-box-1"></div>
+        <div class="landing-box-2"></div>
+        <div class="landing-box-3"></div>
+        <div class="landing-box-4"></div>
       </div>
-      <div class="landing-box-3">
+    </nav>
+    
+    <!-- Second part of the landing page -->
+    <div class="wraps-second-part">
+      <div class="sub-wraps-objective">
+        <!-- Fundamental Objectives section -->
+        <h1 class="about-header">Fundamental Objectives</h1>
+        <hr class="landing-line-1">
+        <div class="wraps-objectives">
+          <div class="text-separate">
+            <span class="landing-entity">&diams;</span>Enhance safety and security in various environments.
+          </div>
+          <div class="text-separate">
+            <span class="landing-entity">&diams;</span>Provide a reliable tool for incident reporting, management, and analysis.
+          </div>
+          <div class="text-separate">
+            <span class="landing-entity">&diams;</span>Promote a proactive approach to maintaining a secure environment.
+          </div>
+          <div class="text-separate">
+            <span class="landing-entity">&diams;</span>Enable efficient documentation and tracking of incidents.
+          </div>
+          <div class="text-separate">
+            <span class="landing-entity">&diams;</span>Facilitate real-time notifications and alerts.
+          </div>
+          <div class="text-separate"> 
+            <span class="landing-entity">&diams;</span>Generate comprehensive reports for analysis and decision-making.
+          </div>
+          <div class="text-separate">
+            <span class="landing-entity">&diams;</span>User-friendly interface accessible to users of all technical backgrounds.
+          </div>
+          <div class="text-separate">
+            <span class="landing-entity">&diams;</span>Customizable workflows to adapt to different organizational needs.
+          </div>
+          <div class="text-separate">
+            <span class="landing-entity">&diams;</span>Create a culture of safety and security in educational, corporate, and community settings.
+          </div>
+          <div class="text-separate">
+            <span class="landing-entity">&diams;</span>Empower effective incident response and risk mitigation FOR GOOD. 
+          </div>
+        </div>
       </div>
-      <div class="landing-box-4">
+      
+    <footer>
+      <!-- Landing footer -->
+      <div class="landing-footer">
+        <p class="copyright">&copy;2023 JusticeGuard. All Rights Reserved.</p>
       </div>
     </div>
-  </nav>
-  <div class="wraps-second-part">
-    <div class="sub-wraps-objective">
-  <h1 class="about-header">Fundamental Objectives</h1><hr class="landing-line-1">
-  <div class="wraps-objectives">
-    <div class="text-separate">
-    <span class="landing-entity">&diams;</span>Enhance safety and security in various enviroments.
-    </div>
-    <div class="text-separate">
-    <span class="landing-entity">&diams;</span>Provide a reliable tool for incident reporting, management, and analysis.
-    </div>
-    <div class="text-separate">
-    <span class="landing-entity">&diams;</span>Promote a proactive approach to maintaining a secure enviroment.
-    </div>
-    <div class="text-separate">
-    <span class="landing-entity">&diams;</span>Enable efficient documentationand tracking of incidents.
-    </div>
-    <div class="text-separate">
-    <span class="landing-entity">&diams;</span>Facilitate real-time notifications and alerts.
-    </div>
-    <div class="text-separate"> 
-    <span class="landing-entity">&diams;</span>Generate comprehensive reports for analysis and decision-making.
-    </div>
-    <div class="text-separate">
-    <span class="landing-entity">&diams;</span>User-friendly interface accessible to users of all technical backgrounds.
-    </div>
-    <div class="text-separate">
-    <span class="landing-entity">&diams;</span>Customizable workflows to adapt to different organizational needs.
-    </div>
-    <div class="text-separate">
-    <span class="landing-entity">&diams;</span>Create a cultural of safety and security in educational, corporate, and community settings.
-    </div>
-    <div class="text-separate">
-    <span class="landing-entity">&diams;</span>Empower effective incident response and risk mitigation FOR GOOD. 
-    </div>
+    </footer>
   </div>
-  </div>
-  <div class="landing-footer">
-    <p class="copyright">&copy;2023 JusticeGuard. All Rights Reserved.</p>
-  </div>
-  </div>
-  <footer>
-    <p class="copyright">&copy;2023 JusticeGuard. All Rights Reserved.</p>
-  </footer>
-</div>
 </body>
 </html>

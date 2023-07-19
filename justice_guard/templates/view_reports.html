@@ -4,34 +4,80 @@
     <title>Justice Guard - View Reports</title>
     <style>
         /* Custom styles for the reports page */
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
         }
 
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: green;
-            font-weight: bold;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         h1 {
             text-align: center;
             font-size: 24px;
             font-weight: bold;
-            color: red;
+            color: #333;
             margin-top: 20px;
             margin-bottom: 30px;
         }
 
-        .btn {
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar-link {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-link:hover {
+            background-color: #555;
+        }
+
+        .navbar-link.active {
+            background-color: #555;
+        }
+
+        .delete-btn {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 6px 12px;
             background-color: #f44336;
             color: #fff;
             text-decoration: none;
@@ -39,47 +85,59 @@
             transition: background-color 0.3s ease;
         }
 
-        .btn:hover {
+        .delete-btn:hover {
             background-color: #ff6655;
         }
     </style>
 </head>
 <body>
-    <h1>Reports</h1>
-    <header>
-        <a href="{{ url_for('home') }}" class="btn">Home</a>
-    </header>
+    <div class="container">
+        <h1>Reports</h1>
+        
+        <!-- Navbar section -->
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" class="navbar-logo">JusticeGuard</a>
+            <div>
+                <a href="{{ url_for('home') }}" class="navbar-link">Home</a>
+                <a href="{{ url_for('create_report') }}" class="navbar-link">Create Report</a>
+                <a href="{{ url_for('view_reports') }}" class="navbar-link active">View Reports</a>
+                <a href="{{ url_for('logout') }}" class="navbar-link">Logout</a>
+            </div>
+        </nav>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Location</th>
-                <th>Date Reported</th>
-                <th>User</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for report in reports %}
+        <!-- Reports table section -->
+        <table>
+            <thead>
                 <tr>
-                    <td>{{ report.title }}</td>
-                    <td>{{ report.description }}</td>
-                    <td>{{ report.location }}</td>
-                    <td>{{ report.date_reported }}</td>
-                    <td>{{ report.user.username }}</td>
-                    <td>
-                        {% if current_user == report.user %}
-                            <form action="{{ url_for('delete_report', report_id=report.id) }}" method="POST">
-                                <input type="hidden" name="_method" value="DELETE">
-                                <button type="submit">Delete</button>
-                            </form>
-                        {% endif %}
-                    </td>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Date Reported</th>
+                    <th>User</th>
+                    <th>Actions</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for report in reports %}
+                    <tr>
+                        <td>{{ report.title }}</td>
+                        <td>{{ report.description }}</td>
+                        <td>{{ report.location }}</td>
+                        <td>{{ report.date_reported }}</td>
+                        <td>{{ report.user.username }}</td>
+                        <td>
+                            {% if current_user == report.user %}
+                                <!-- Delete button section -->
+                                <form action="{{ url_for('delete_report', report_id=report.id) }}" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="delete-btn">Delete</button>
+                                </form>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

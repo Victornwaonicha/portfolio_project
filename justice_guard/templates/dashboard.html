@@ -174,14 +174,11 @@
     <h1 class="my-logo-1">JusticeGuard</h1>
     <div class="wrap-nav-text">
       <a href="{{ url_for('landing') }}"><span class="nav-text">Home</span></a>
-      <span class="nav-text">About</span>
+      <a href="{{ url_for('profile') }}"><span class="nav-text">Profile</span></a>
       <span class="nav-text">Contact</span>
-      <div class="logout">
-        <a href="/" class="logout-btn">Logout</a>
-      </div>
     </div>
   </nav>
-  <h1 class="wlcm-text">Welcome, {{ current_user }}</h1>
+  <h1 class="wlcm-text">Welcome, {{ username }}</h1>
   <hr class="text-underline-1">
   <div class="wrap-details">
     <p class="my-dashboard">This is your Dashboard.</p>

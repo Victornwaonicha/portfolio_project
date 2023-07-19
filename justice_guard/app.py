@@ -2,17 +2,13 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_login import LoginManager, UserMixin, login_user, current_user, login_required, logout_user
-from flask_login import current_user
-
 
 # Create a Flask application instance
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://guard:Abinitio1968!@localhost:3306/justice_guarddb'
 app.config['SECRET_KEY'] = 'my_secret_key_5050'
 
-
 db = SQLAlchemy(app)
-
 
 # Initialize LoginManager and configure it
 login_manager = LoginManager(app)
@@ -22,17 +18,17 @@ login_manager.login_view = 'login'
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-
 # Define the User model
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
+    full_name = db.Column(db.String(100), nullable=False)  # Add this line
+
 
     def __repr__(self):
         return f"<User {self.username}>"
-
 
 # Define the Report model
 class Report(db.Model):
@@ -47,16 +43,24 @@ class Report(db.Model):
     def __repr__(self):
         return f"<Report {self.title}>"
 
+# Define the profile route
+@app.route('/profile')
+@login_required
+def profile():
+    username = current_user.username
+    return render_template('profile.html', username=username, user=current_user)
+
 
 @app.route('/')
 def landing():
-    return render_template('landing.html')
+    logged_in = False  # Set the value of logged_in based on the user's authentication status
+    return render_template('landing.html', logged_in=logged_in)
 
 
 # Define a route for the homepage ('/')
-@app.route('/home')
+@app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('landing.html')
 
 
 # Define the About route
@@ -69,17 +73,6 @@ def about():
 def contact():
     return render_template('contact.html')
     
-
-@app.route('/submit_contact', methods=['POST'])
-def submit_contact():
-    # Process the contact form submission
-    name = request.form.get('name')
-    email = request.form.get('email')
-    message = request.form.get('message')
-    
-    # Add your logic here to handle the submitted data
-
-    return "Thank you for contacting us!"
 
 
 # Define the report creation route
@@ -141,9 +134,15 @@ def register():
         username = request.form['username']
         password = request.form['password']
         email = request.form['email']
+        
+        # Retrieve the full name from the form
+        full_name = request.form['full_name']
+
+        # Set the role to "user"
+        role = "user"
 
         # Create a new user
-        new_user = User(username=username, password=password, email=email)
+        new_user = User(username=username, password=password, email=email, full_name=full_name, role=role)
         db.session.add(new_user)
         db.session.commit()
 
@@ -157,11 +156,12 @@ with app.app_context():
     db.create_all()
 
 
-    # Define the dashboard route
+   # Define the dashboard route
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    return render_template('dashboard.html', current_user=current_user.username)
+    username = current_user.username
+    return render_template('dashboard.html', username=username, user=current_user)
 
 
 # Define the view reports route
